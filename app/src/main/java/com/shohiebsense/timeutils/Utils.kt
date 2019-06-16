@@ -14,6 +14,10 @@ object Utils {
         const val DEFAULLT_DATE_FORMAT = "yyyy-MM-dd"
         const val DEFAULT_TIMESTAMP_FORMAT =  "yyyy-MM-dd HH:mm:ss"
 
+        fun getCalendar() : Calendar{
+            return Calendar.getInstance()
+        }
+
         fun getDateCurrent() : String{
             val dateFormat= SimpleDateFormat(DEFAULLT_DATE_FORMAT)
             return dateFormat.format(Date())
@@ -91,6 +95,11 @@ object Utils {
             }
             return strHourMinutes
         }
+
+        fun getStandardDigitsInTime(hoursOrMinutes : Int) : String{
+            return getStandardDigitsInTime(hoursOrMinutes.toLong())
+        }
+
 
         fun getTimeDifference(firstTimeStr : String, secondTimeStr : String) : String{
             val simpleDateFormat = SimpleDateFormat(DEFAULT_TIMESTAMP_FORMAT)
